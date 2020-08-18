@@ -1,0 +1,69 @@
+﻿@model SakilaCustomers.Models.Customer
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Customer</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="customer_id" disabled/>
+            <div class="form-group">
+                <label asp-for="store_id" class="control-label"></label>
+                <input asp-for="store_id" class="form-control" disabled/>
+                <span asp-validation-for="store_id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="first_name" class="control-label"></label>
+                <input asp-for="first_name" class="form-control" />
+                <span asp-validation-for="first_name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="last_name" class="control-label"></label>
+                <input asp-for="last_name" class="form-control" />
+                <span asp-validation-for="last_name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="email" class="control-label"></label>
+                <input asp-for="email" class="form-control" />
+                <span asp-validation-for="email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="address_id" class="control-label"></label>
+                <input asp-for="address_id" class="form-control" />
+                <span asp-validation-for="address_id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="active" class="control-label"></label>
+                <input asp-for="active" class="form-control" />
+                <span asp-validation-for="active" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="create_date" class="control-label"></label>
+                <input asp-for="create_date" class="form-control" disabled/>
+                <span asp-validation-for="create_date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="last_update" class="control-label"></label>
+                <input asp-for="last_update" class="form-control" />
+                <span asp-validation-for="last_update" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
